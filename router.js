@@ -43,6 +43,7 @@ router.post('/login', (req,res) => {
 
 
 router.get('/users', restricted, (req,res) => {
+    console.log('req.jwtToken', req.jwtToken)
     Users.find()
         .then(users => {
             res.json(users)
